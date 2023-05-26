@@ -1,0 +1,17 @@
+name: example-lando
+recipe: lamp
+config:
+  php: "8.2"
+  webroot: .
+  xdebug: "develop, debug"
+services:
+  appserver:
+    config:
+      php: ./.lando.config/php.ini
+  database:
+    type: mysql
+    portforward: 3307
+    creds:
+      user: admin
+      password: admin
+      database: example-lando
